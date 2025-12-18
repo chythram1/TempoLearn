@@ -189,12 +189,12 @@ function NoteCard({
 }) {
   const [showMenu, setShowMenu] = useState(false);
 
-  const statusConfig = {
-    completed: { icon: CheckCircle2, color: 'text-green-600', bg: 'bg-green-100' },
-    processing: { icon: Loader2, color: 'text-amber-600', bg: 'bg-amber-100', animate: true },
-    failed: { icon: AlertCircle, color: 'text-red-600', bg: 'bg-red-100' },
-    pending: { icon: FileText, color: 'text-ink-400', bg: 'bg-parchment-100' }
-  };
+ const statusConfig = {
+  completed: { icon: CheckCircle2, color: 'text-green-600', bg: 'bg-green-100', animate: false },
+  processing: { icon: Loader2, color: 'text-amber-600', bg: 'bg-amber-100', animate: true },
+  failed: { icon: AlertCircle, color: 'text-red-600', bg: 'bg-red-100', animate: false },
+  pending: { icon: FileText, color: 'text-ink-400', bg: 'bg-parchment-100', animate: false }
+};
 
   const config = statusConfig[note.status as keyof typeof statusConfig] || statusConfig.pending;
   const StatusIcon = config.icon;
